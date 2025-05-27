@@ -1,6 +1,14 @@
 /*** GLOBAL VARIABLES ***/
 
 let player; // Variable for the circle object
+            // Create a variable for the spacebar here
+            // Create the gameon variable to check if the game is on or off
+
+/*** SPACEBAR document.body.keydown LISTENER ***/
+
+
+    // write the listener for the spacebar key here
+
 
 /*** INIT FUNCTIONS ***/
 
@@ -23,6 +31,12 @@ function init() {
     0.1 // Starting velocity
   );
 
+  // Create the rectangle object on init - rectangle = new rectangle(.......)
+
+
+
+
+
   window.requestAnimationFrame(gameLoop);
 }
 
@@ -37,8 +51,34 @@ function circle(x, y, radius, color, velocity) {
   this.velocity = velocity;
 };
 
+// Create the Rectangle object to represent the obstacle - function rectangle(.......)
+
+
+
+
+
+// Create the rectanglePosition function to draw the rectangle on the canvas
+
+
+
+
+
+// Create the collision detection function to check if the circle collides with the rectangle
+
+
+
+
+
+
+
+
 // Function to update the player position and velocity 
 function playerPosition() {
+
+  // Create the if statement for the spacebar here to set the velocity to -5
+
+
+
 
   //  Check to see if circle is below the canvas
   if (player.y > 480) {
@@ -59,18 +99,21 @@ function playerPosition() {
 
 }
 
+// Function to generate a random integer between min and max
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
+ 
 /*** GAMELOOP ***/
 
 function gameLoop(timestamp) {
-  // This causes the game to loop. 
+  // This causes the game to loop (modify this with the gameon variable to stop the game)
     window.requestAnimationFrame(gameLoop);
+
   // Clear the canvas on each 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 // Call the functions we want to run
-  playerPosition();
+  playerPosition(); // Update the player position
+                    // Call the rectanglePosition function to draw the rectangle on the canvas
 }
